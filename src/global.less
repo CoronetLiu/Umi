@@ -1,0 +1,311 @@
+@import '~antd/es/style/variable.less';
+@import '~video-react/dist/video-react.css';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+.ant-pro-sider.ant-layout-sider.ant-pro-sider-fixed {
+  left: unset;
+}
+
+.ant-pro-sider-logo {
+  justify-content: center;
+  padding: 15px 0;
+
+  h1 {
+    white-space: nowrap;
+  }
+}
+
+// 菜单显示隐藏同步
+aside.ant-layout-sider,
+.ant-pro-sider-logo,
+header.ant-layout-header {
+  transition: all 0.3s;
+}
+
+// 用户下拉菜单
+.antd-pro-components-right-content-index-menu .ant-dropdown-menu-item {
+  min-width: 120px;
+}
+
+/*隐藏自带触发器*/
+.ant-pro-sider-collapsed-button {
+  display: none !important;
+}
+
+.ant-page-header {
+  padding: 0 !important;
+}
+
+/*配合 layout 里的 margin*/
+.ant-pro-page-container,
+.ant-pro-page-container-children-content {
+  margin: 0 !important;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: @screen-xs) {
+  .ant-table {
+    width: 100%;
+    overflow-x: auto;
+
+    &-thead > tr,
+    &-tbody > tr {
+      > th,
+      > td {
+        white-space: pre;
+
+        > span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+// Compatible with IE11
+@media screen and(-ms-high-contrast: active), (-ms-high-contrast: none) {
+  body .ant-design-pro > .ant-layout {
+    min-height: 100vh;
+  }
+}
+
+.ant-pro-basicLayout .ant-layout-header.ant-pro-fixed-header {
+  z-index: 999 !important;
+}
+
+main {
+  overflow-x: hidden;
+}
+
+/*Table*/
+.ant-table-thead > tr > th {
+  height: 45px;
+  color: #393c43 !important;
+  font-size: 14px;
+  background: #eff1f5 !important;
+}
+
+.ant-table-thead > tr > th,
+.ant-table-tbody > tr > td {
+  padding: 10px 8px !important;
+  color: #393c43 !important;
+  font-size: 14px;
+  line-height: 23px;
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: #dee3eb;
+}
+
+.ant-table-wrapper {
+  position: relative;
+  padding-bottom: 40px;
+  overflow: auto;
+  background: #ffffff;
+  outline: none;
+}
+
+.ant-tabs .ant-tabs-top-content > .ant-tabs-tabpane,
+.ant-tabs .ant-tabs-bottom-content > .ant-tabs-tabpane {
+  outline: none !important;
+}
+
+.antd-pro-pages-tree-table-layout-tablewrapper__container {
+  // padding: 0 !important;
+}
+
+.ant-table-column-sorters {
+  padding: 0 !important;
+}
+
+// 分页
+.ant-spin-nested-loading {
+  position: static !important;
+
+  .ant-spin-container {
+    position: static !important;
+  }
+}
+
+.ant-table-pagination {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+}
+
+.ant-pagination-total-text {
+  height: 30px !important;
+  line-height: 30px !important;
+}
+
+.ant-pagination-item,
+.ant-pagination-prev,
+.ant-pagination-next {
+  min-width: 30px !important;
+  height: 30px;
+  min-height: 30px;
+  margin: 0 3px !important;
+  line-height: 30px;
+  background: #ffffff !important;
+  border: 1px solid #e0e2e5 !important;
+
+  a {
+    line-height: 28px;
+  }
+}
+
+.ant-pagination-item-active {
+  background: @primary-color !important;
+
+  a {
+    color: #ffffff !important;
+  }
+
+  a:hover {
+    color: #ffffff !important;
+  }
+}
+
+.ant-pagination-item-active:focus a {
+  color: #ffffff !important;
+}
+
+.ant-pagination-options-size-changer {
+  .ant-select-dropdown {
+    top: unset !important;
+    bottom: 0 !important;
+  }
+}
+
+.ant-select-selector,
+.ant-select-selector {
+  height: 30px !important;
+}
+
+.ant-select-selection-item {
+  line-height: 28px !important;
+}
+
+.ant-pagination-options-size-changer {
+  vertical-align: middle;
+}
+
+.ant-pagination-options-size-changer.ant-select {
+  min-width: 100px;
+}
+
+.ant-table-pagination.ant-pagination {
+  margin: 0 !important;
+}
+
+/*分页跳转按钮样式*/
+.ant-pagination.mini .ant-pagination-options-quick-jumper {
+  height: 30px;
+  line-height: 30px;
+
+  input {
+    height: 28px;
+    line-height: 28px;
+  }
+
+  button {
+    height: 28px;
+    margin-left: 10px;
+    line-height: 28px;
+  }
+}
+
+/*网络报错样式*/
+.netErrorClass {
+  width: auto;
+  min-width: 300px;
+  max-width: 450px;
+  margin-top: 40px;
+  padding: 10px;
+
+  :global {
+    .ant-notification-notice-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      margin: 0;
+      transform: translateY(-50%);
+    }
+
+    .ant-notification-notice-message {
+      margin-left: 30px;
+      font-size: 14px;
+    }
+
+    .ant-notification-notice-description {
+      margin-left: 30px;
+      font-size: 12px;
+    }
+
+    .ant-notification-notice-close {
+      top: 5px;
+      right: 10px;
+    }
+  }
+}
+
+/*403页面样式*/
+.ant-result-403 {
+  opacity: 0;
+  animation: move403 1000ms linear 0ms 1 forwards;
+}
+
+@keyframes move403 {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/*地图默认背景*/
+.amap-maps {
+  background: #999999;
+}
+
+/* 隐藏高德logo */
+.amap-logo,
+.amap-copyright {
+  display: none !important;
+}

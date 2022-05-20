@@ -1,0 +1,161 @@
+@import (reference) '~antd/es/style/themes/index';
+
+@pro-header-hover-bg: rgba(0, 0, 0, 0.025);
+
+.menu {
+  :global(.anticon) {
+    margin-right: 8px;
+  }
+
+  :global(.ant-dropdown-menu-item) {
+    min-width: 160px;
+  }
+}
+
+.right {
+  display: flex;
+  float: right;
+  height: 60px;
+  margin-left: auto;
+  overflow: hidden;
+
+  .action {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    > span {
+      vertical-align: middle;
+    }
+
+    &:hover {
+      background: @pro-header-hover-bg;
+    }
+
+    &:global(.opened) {
+      background: @pro-header-hover-bg;
+    }
+  }
+
+  .search {
+    padding: 0 12px;
+
+    &:hover {
+      background: transparent;
+    }
+  }
+
+  .account {
+    .avatar {
+      width: 30px;
+      height: 30px;
+      margin-right: 8px;
+      vertical-align: top;
+      background: url(../../assets/user.svg) no-repeat center right;
+      background-size: 70% 70%;
+    }
+
+    .name {
+      margin: 2px 8px 0 0;
+    }
+  }
+}
+
+.dark {
+  .action {
+    &:hover {
+      background: #252a3d;
+    }
+
+    &:global(.opened) {
+      background: #252a3d;
+    }
+  }
+}
+
+.back {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  cursor: pointer;
+
+  i {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background: url(../../assets/back.svg) no-repeat center right;
+    background-size: 70% 70%;
+  }
+
+  span {
+    font-size: 14px;
+  }
+}
+
+.logout_box {
+  :global {
+    .ant-modal-footer,
+    .ant-modal-footer div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      border-top: 0;
+    }
+  }
+}
+
+.change_pw_explain {
+  :global {
+    .ant-form-item {
+      margin-bottom: 0;
+      color: #aaaaaa;
+      font-size: 12px;
+
+      label {
+        height: 18px;
+        color: #aaaaaa;
+        font-size: 12px;
+      }
+
+      p {
+        margin: 0;
+        text-align: left;
+      }
+    }
+  }
+}
+
+.about_sys_version {
+  :global {
+    .ant-modal-header,
+    .ant-modal-footer {
+      border: 0;
+    }
+
+    .ant-modal-title {
+      color: #1a62c5;
+      font-size: 18px;
+    }
+
+    .ant-modal-body {
+      i {
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        background: url(../../assets/logo.svg) no-repeat;
+        background-size: 100% 100%;
+      }
+
+      div {
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

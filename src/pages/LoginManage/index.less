@@ -1,0 +1,257 @@
+@import (reference) '~antd/es/style/themes/index';
+
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: transparent;
+  background-image: none;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  transition: background-color 99999999s ease-in-out 0s; //背景色透明  生效时长  过渡效果  启用时延迟的时间
+  -webkit-text-fill-color: #ededed !important;
+  caret-color: #ffffff;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(../../assets/loginManage/bg.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+
+  .logo {
+    position: absolute;
+    top: 58px;
+    left: 275px;
+    width: 235px;
+    height: 66px;
+  }
+}
+
+.main {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 45vw;
+  height: 100vh;
+
+  .mainContainer {
+    width: 20vw;
+    height: 500px;
+    margin: 20% auto;
+  }
+
+  .formtitle {
+    box-sizing: border-box;
+    width: 100%;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+
+    span {
+      display: block;
+      background-image: -webkit-linear-gradient(
+        top,
+        rgba(240, 252, 255, 1),
+        rgba(109, 160, 255, 1)
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+
+  .inputgroups {
+    width: 100%;
+    height: auto;
+
+    .InputItem {
+      position: relative;
+      width: 100%;
+      height: 74px;
+
+      .userItem {
+        box-sizing: border-box;
+        width: 100%;
+        height: 42px;
+        margin: 0 auto;
+        padding: 4px 0 0 10px;
+        background: rgba(206, 237, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+        outline: none;
+      }
+
+      .captchaWrapper {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        box-sizing: border-box;
+        width: 100%;
+        height: 42px;
+        margin: 0 auto;
+        background: rgba(206, 237, 255, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 2px;
+
+        .codeItem {
+          box-sizing: border-box;
+          width: 100%;
+          height: 42px;
+          padding: 4px 0 0 10px;
+          outline: none;
+        }
+
+        .inputCodestyle {
+          display: inline-block;
+          width: calc(100% - 42px);
+          height: 24px;
+          margin-left: 42px;
+          padding: 0;
+          color: #ffffff;
+          text-align: left;
+          background-color: transparent;
+          border: none;
+          outline: none;
+        }
+
+        .inputCodestyle:focus {
+          border: none;
+          outline: none;
+          box-shadow: none;
+        }
+      }
+
+      .submitItem {
+        width: 100%;
+        height: 42px;
+        margin: 0 auto;
+        letter-spacing: 1px;
+        border: 0;
+        border-radius: 4px;
+
+        :global {
+          .ant-btn-primary {
+            width: 100%;
+          }
+        }
+      }
+
+      .userIcon {
+        position: absolute;
+        top: 9px;
+        left: 16px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../../assets/loginManage/user.png) no-repeat left center;
+        background-size: 24px auto;
+      }
+
+      .pwdIcon {
+        position: absolute;
+        top: 9px;
+        left: 16px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../../assets/loginManage/pwd.png) no-repeat left center;
+        background-size: 24px auto;
+      }
+
+      .codeIcon {
+        position: absolute;
+        top: 9px;
+        left: 16px;
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background: url(../../assets/loginManage/code.png) no-repeat left center;
+        background-size: 24px auto;
+      }
+
+      .inputstyle {
+        display: inline-block;
+        box-sizing: border-box;
+        width: calc(100% - 52px);
+        height: 24px;
+        margin-left: 52px;
+        padding: 0;
+        color: #ffffff;
+        text-align: left;
+        background: transparent !important;
+        border: none;
+        outline: none;
+      }
+
+      .inputstyle:focus {
+        border: none;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: @screen-sm) {
+    width: 95%;
+  }
+
+  .icon {
+    margin-left: 16px;
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 24px;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: color 0.3s;
+
+    &:hover {
+      color: @primary-color;
+    }
+  }
+
+  .other {
+    margin-top: 20px;
+    line-height: 22px;
+    text-align: left;
+
+    .register {
+      float: right;
+    }
+  }
+
+  :global {
+    .antd-pro-login-submit {
+      width: 100%;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab {
+      cursor: default;
+    }
+
+    .antd-pro-pages-login-manage-user-login-components-login-index-login {
+      .ant-input {
+        margin-top: 0px;
+      }
+    }
+
+    .ant-input-affix-wrapper:hover {
+      background-color: rgba(0, 0, 0, 0);
+    }
+
+    .ant-form-item-has-error .ant-form-item-explain,
+    .ant-form-item-has-error .ant-form-item-split {
+      height: 30px;
+      overflow: hidden;
+      color: #ef4412;
+    }
+
+    .ant-form-item-explain div {
+      line-height: 30px;
+    }
+
+    .ant-form-item-explain,
+    .ant-form-item-extra {
+      margin-top: 10px;
+      text-indent: 12px;
+    }
+  }
+}

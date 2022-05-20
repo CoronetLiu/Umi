@@ -1,0 +1,263 @@
+.detailDrawer {
+  width: 100vh;
+  height: 100%;
+
+  .detailContainer {
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+    background: #ffffff;
+
+    .backBox {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 32px;
+      margin-bottom: 20px;
+
+      :global {
+        .ant-btn-primary {
+          width: 100px;
+          margin-right: 16px;
+          background: #2c8df1;
+        }
+
+        .ant-btn-primary + div {
+          color: #333333;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .detailContent {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      min-height: calc(100% - 52px);
+
+      .baseInfo {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        min-height: 100%;
+
+        .blockContainer {
+          width: 100%;
+          border: 1px solid #e9ecee;
+
+          .title {
+            width: 100%;
+            height: 32px;
+            color: #333;
+            font-size: 15px;
+            line-height: 32px;
+            letter-spacing: 1px;
+            text-align: center;
+            background: #eff1f5;
+          }
+
+          .content {
+            height: calc(100% - 32px);
+            padding-left: 20px;
+
+            :global {
+              .ant-descriptions-item-label {
+                white-space: nowrap;
+              }
+
+              .ant-descriptions-item-content {
+                display: inline-block;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+              }
+            }
+          }
+        }
+
+        .blockContainer:nth-child(1) {
+          min-height: 220px;
+          margin-bottom: 20px;
+        }
+
+        .blockContainer:nth-child(2) {
+          min-height: 250px;
+        }
+      }
+
+      .picInfo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;
+        min-height: 100%;
+        margin-left: 20px;
+
+        .carouselContainer,
+        .platePic,
+        .shortVideo {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .carouselContainer {
+          width: 100%;
+          height: 200px;
+          background: #f0f2f5;
+
+          div {
+            width: 100%;
+            height: 100%;
+          }
+
+          img {
+            object-fit: cover;
+          }
+        }
+
+        .platePic {
+          width: 100%;
+          height: 80px;
+          margin: 20px 0;
+          background: #f0f2f5;
+
+          img {
+            height: 100%;
+          }
+        }
+
+        .shortVideo {
+          width: 100%;
+          height: 200px;
+          background: #f0f2f5;
+
+          video,
+          img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .videoFullModal {
+    :global {
+      .ant-modal-content {
+        height: 100%;
+      }
+
+      .ant-modal-close-x {
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+      }
+    }
+  }
+
+  :global {
+    .ant-drawer-content-wrapper {
+      width: 100% !important;
+      box-shadow: none !important;
+    }
+
+    .ant-drawer-body {
+      height: 100%;
+      padding: 20px;
+      background: #eff1f5;
+    }
+
+    .video-react-video {
+      width: 100%;
+      height: 100%;
+    }
+
+    .ant-descriptions {
+      margin: 0;
+    }
+
+    .ant-descriptions-item {
+      span {
+        color: #393c43;
+        font-size: 14px;
+      }
+    }
+
+    .ant-descriptions-row > td {
+      padding: 20px 0;
+    }
+
+    // 走马灯
+    .ant-carousel {
+      height: 200px;
+
+      .slick-slider {
+        height: 100%;
+
+        .slick-list {
+          height: 100%;
+
+          .slick-track {
+            height: 100%;
+          }
+
+          .slick-slide {
+            height: 100%;
+
+            div {
+              height: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 1919px) {
+    .detailContainer {
+      .detailContent {
+        .baseInfo {
+          .blockContainer:nth-child(1) {
+            min-height: 160px;
+            margin-bottom: 15px;
+          }
+
+          .blockContainer:nth-child(2) {
+            min-height: 200px;
+          }
+        }
+
+        .picInfo {
+          width: 250px;
+
+          .carouselContainer {
+            height: 140px;
+          }
+
+          .platePic {
+            height: 70px;
+            margin: 15px 0;
+          }
+
+          .shortVideo {
+            height: 140px;
+          }
+        }
+      }
+    }
+
+    :global {
+      .ant-descriptions-row > td {
+        padding: 10px 0;
+      }
+
+      // 走马灯
+      .ant-carousel {
+        height: 140px;
+      }
+    }
+  }
+}

@@ -1,0 +1,496 @@
+@import (reference) '~antd/es/style/themes/index';
+
+.mapControl {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .mapContainer {
+    position: relative;
+    top: -120px;
+    width: 100%;
+    height: calc(100% + 120px);
+  }
+
+  .carInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    height: 311px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #21b6ff;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 8px 0px #21b6ff;
+    //width: 644px;
+    transform: translateY(-50%);
+
+    > p {
+      height: 36px;
+      padding-left: 12px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 36px;
+      background: linear-gradient(90deg, rgba(33, 182, 255, 0.6) 0%, rgba(33, 182, 255, 0) 100%);
+    }
+
+    > div {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 8px 12px;
+
+      > div {
+        height: 253px;
+      }
+
+      > div:nth-child(1) {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 375px;
+
+        > div:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 100%;
+          height: calc(100% - 50px);
+          background: rgba(33, 182, 255, 0.12);
+
+          p {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            padding: 8px 5px;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 1px;
+
+            span:nth-child(1) {
+              width: 125px;
+              color: #def3fd;
+              text-align: right;
+            }
+
+            span:nth-child(2) {
+              flex: 1;
+              color: #ffffff;
+            }
+          }
+        }
+
+        > div:nth-child(2) {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: center;
+          height: 45px;
+
+          span {
+            width: 180px;
+            height: 36px;
+            color: #00f0a1;
+            font-size: 18px;
+            line-height: 36px;
+            text-align: center;
+            background: rgba(0, 240, 161, 0.5);
+            cursor: pointer;
+          }
+
+          span.cantClick {
+            cursor: not-allowed;
+            opacity: 0.4;
+          }
+        }
+      }
+
+      > div:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 233px;
+        margin-left: 8px;
+        background: rgba(33, 182, 255, 0.12);
+
+        p {
+          display: flex;
+          flex-direction: row;
+          width: 100%;
+          padding: 4px 0;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 1px;
+
+          span:nth-child(1) {
+            width: 125px;
+            color: #def3fd;
+            text-align: right;
+          }
+
+          span:nth-child(2) {
+            flex: 1;
+            color: #21b6ff;
+          }
+        }
+
+        p:nth-last-child(2) span:nth-child(2) {
+          color: #ff8600;
+        }
+
+        p:nth-last-child(1) span:nth-child(2) {
+          color: #def3fd;
+        }
+      }
+
+      > div:nth-child(3) {
+        width: 300px;
+        margin-left: 8px;
+
+        :global {
+          .ant-tabs-content {
+            height: 168px;
+            margin-top: 10px;
+          }
+
+          .ant-tabs-tabpane {
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .ant-tabs-bottom .ant-tabs-bottom-bar {
+            margin-top: 20px;
+            border: none;
+          }
+
+          .ant-tabs-nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+
+            > div {
+              > div:nth-child(1) {
+                border-radius: 20px 0 0 20px;
+              }
+
+              > div:nth-child(2) {
+                margin: 0 3px;
+              }
+
+              > div:nth-child(3) {
+                border-radius: 0 20px 20px 0;
+              }
+            }
+
+            .ant-tabs-tab {
+              width: 84px;
+              margin: 0;
+              padding: 5px 0;
+              color: #fff;
+              text-align: center;
+              background: rgba(33, 182, 255, 0.3);
+            }
+
+            .ant-tabs-tab-active {
+              background: rgba(33, 182, 255, 0.73);
+            }
+          }
+
+          .ant-tabs-nav-wrap {
+            margin: 0;
+          }
+
+          .ant-tabs-ink-bar {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  .carInfo::before {
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0);
+    border: 10px solid #21b6ff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(45deg) translateY(-50%);
+    content: '';
+  }
+
+  .trailInfo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #21b6ff;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 8px 0px #21b6ff;
+    transform: translateY(-50%);
+
+    > p {
+      position: relative;
+      height: 36px;
+      padding-left: 12px;
+      color: #ffffff;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 36px;
+      background: linear-gradient(90deg, rgba(33, 182, 255, 0.6) 0%, rgba(33, 182, 255, 0) 100%);
+    }
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 136px;
+      padding: 15px 20px;
+
+      p {
+        width: 100%;
+        height: 34px;
+        margin-bottom: 1px;
+        font-size: 16px;
+        line-height: 34px;
+        letter-spacing: 1px;
+
+        span {
+          display: inline-block;
+        }
+
+        span:nth-child(1) {
+          width: 85px;
+          color: #def3fd;
+        }
+
+        span:nth-child(2) {
+          color: #ffffff;
+        }
+      }
+
+      //p:nth-child(odd) {
+      //  background: rgba(33, 182, 255, 0.12);
+      //}
+      //
+      //p:nth-child(even) {
+      //  background: rgba(33, 182, 255, 0.08);
+      //}
+    }
+  }
+
+  .trailInfo::before {
+    position: absolute;
+    top: 50%;
+    left: -17px;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    background: rgba(0, 0, 0, 0);
+    border: 10px solid #21b6ff;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    transform: rotate(45deg) translateY(-50%);
+    content: '';
+  }
+
+  .backPage {
+    position: absolute;
+    top: 34px;
+    left: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 106px;
+    height: 70px;
+    background: rgba(22, 119, 166, 0.4);
+    border-left: 6px solid #21b6ff;
+    border-radius: 2px 0 0 2px;
+    cursor: pointer;
+
+    img {
+      width: 34px;
+      height: 20px;
+    }
+
+    span {
+      color: #def3fd;
+      font-size: 13px;
+    }
+  }
+}
+
+/*站点的动画样式*/
+.ds {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  height: 72px;
+
+  div:nth-child(1) {
+    position: absolute;
+    bottom: 0;
+    left: 50px;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin-left: -50px;
+    transform: scale(0);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+/*切换时变换，但不触发初始动画*/
+.M0 {
+  //左侧不动
+  > div:nth-child(1) {
+    transform: scale(1);
+    animation: none !important;
+  }
+}
+
+.M1 {
+  //初始
+  > div:nth-child(1) {
+    transform: scale(0);
+    animation: mymoveM1 300ms linear 200ms 1 forwards;
+  }
+}
+
+@keyframes mymoveM1 {
+  //初始动画
+  10% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.circleDs {
+  position: relative;
+  width: 120px;
+  height: 120px;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 60px 0px #ff8600;
+    transform: rotateX(45deg) scale(0);
+  }
+
+  div:nth-child(1) {
+    transform: rotateX(45deg) scale(0);
+    animation: mymoveMC 3000ms linear 100ms infinite;
+  }
+
+  div:nth-child(2) {
+    transform: rotateX(45deg) scale(0);
+    animation: mymoveMC 3000ms linear 1600ms infinite;
+  }
+}
+
+@keyframes mymoveMC {
+  //波纹动画
+  10% {
+    transform: rotateX(45deg) scale(0);
+    opacity: 1;
+  }
+  80% {
+    transform: rotateX(45deg) scale(0.8);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotateX(45deg) scale(1);
+    opacity: 0;
+  }
+}
+
+.circleWarn,
+.circleStop {
+  position: relative;
+  width: 240px;
+  height: 240px;
+
+  div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 50px 25px #d84557;
+    transform: scale(0);
+  }
+
+  div:nth-child(1) {
+    transform: scale(0);
+    animation: mymoveMW 3000ms linear 0ms infinite;
+  }
+
+  div:nth-child(2) {
+    transform: scale(0);
+    animation: mymoveMW 3000ms linear 1000ms infinite;
+  }
+
+  div:nth-child(3) {
+    transform: scale(0);
+    animation: mymoveMW 3000ms linear 2000ms infinite;
+  }
+}
+
+.circleStop {
+  width: 120px;
+  height: 120px;
+
+  div {
+    box-shadow: inset 0px 0px 60px 0px #fbd84f;
+  }
+}
+
+@keyframes mymoveMW {
+  //波纹动画
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

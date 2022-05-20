@@ -1,0 +1,51 @@
+@import (reference) '~antd/es/style/themes/index';
+
+.listPageContainer {
+  margin: 20px !important;
+  padding: 15px;
+  background: #ffffff;
+}
+
+.listPageContainer.hideList {
+  height: 0;
+  overflow: hidden;
+}
+
+.formBox {
+  position: relative;
+  min-height: 50px;
+
+  .formBtns {
+    position: absolute;
+    right: 0;
+    bottom: 18px;
+    z-index: 10;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  :global {
+    .ant-form-item {
+      margin-bottom: 18px;
+
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+
+      .ant-form-item-label {
+        width: 88px;
+      }
+    }
+
+    .ant-form-item-control-input-content {
+      height: 32px;
+      line-height: 32px;
+    }
+
+    .ant-form-item-explain-error {
+      font-size: 12px;
+      white-space: nowrap;
+    }
+  }
+}

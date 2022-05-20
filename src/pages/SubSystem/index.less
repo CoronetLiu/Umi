@@ -1,0 +1,294 @@
+@import (reference) '~antd/es/style/themes/index';
+
+.list_menu_wrapper {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background-size: 100% 100%;
+
+  .top_container {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+    padding: 0 32px 0 40px;
+    background: linear-gradient(90deg, rgba(0, 160, 252, 0.16) 0%, rgba(0, 117, 247, 0.16) 100%);
+
+    > :nth-child(1) {
+      display: flex;
+
+      p {
+        margin-left: 5px;
+        color: #ffffff;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
+  .enforceStatistic {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+
+    .enforceStatistic_banner {
+      width: 100%;
+
+      .enforceStatistic_banner1,
+      .enforceStatistic_banner2 {
+        width: 100%;
+        height: 55vh;
+      }
+
+      .enforceStatistic_banner1 {
+        background: url('../../assets/homePage/banner1.png') no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      .enforceStatistic_banner2 {
+        background: url('../../assets/homePage/banner2.png') no-repeat center center;
+        background-size: 100% 100%;
+      }
+    }
+
+    .enforceStatistic_systemType {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding: 4vh 0;
+      background: #ffffff;
+
+      a {
+        margin: 0 20px;
+
+        dl {
+          transition: all 0.15s;
+        }
+      }
+
+      a:nth-child(1):hover {
+        dl {
+          background: rgba(251, 145, 81, 0.3);
+
+          dd {
+            p {
+              color: #fb9151;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      a:nth-child(2):hover {
+        dl {
+          background: rgba(54, 128, 244, 0.3);
+
+          dd {
+            p {
+              color: rgba(54, 128, 244, 1);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      a:nth-child(3):hover {
+        dl {
+          background: rgba(91, 190, 255, 0.3);
+
+          dd {
+            p {
+              color: rgba(91, 190, 255, 1);
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      a:nth-child(4):hover {
+        dl {
+          background: rgba(251, 145, 81, 0.3);
+
+          dd {
+            p {
+              color: #fb9151;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+
+      dl {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 9.8vw;
+        height: 28.2vh;
+        background: rgba(91, 190, 255, 0.1);
+        border-radius: 4px;
+
+        dt {
+          width: 6vw;
+          height: 6vw;
+          margin-bottom: 3vh;
+        }
+
+        dd {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          p {
+            width: 7vw;
+            color: #333333;
+            font-size: 18px;
+            text-align: center;
+          }
+        }
+      }
+
+      a:nth-child(1) dl {
+        background: rgba(251, 145, 81, 0.1);
+
+        dt {
+          background: url('../../assets/homePage/s1.png') no-repeat center center;
+          background-size: 100% 100%;
+        }
+
+        dd {
+          b {
+            color: #fb9151;
+            background: rgba(251, 145, 81, 0.2);
+          }
+        }
+      }
+
+      a:nth-child(2) dl {
+        background: rgba(54, 128, 244, 0.1);
+
+        dt {
+          background: url('../../assets/homePage/s2.png') no-repeat center center;
+          background-size: 100% 100%;
+        }
+
+        dd {
+          b {
+            color: #2979f4;
+            background: rgba(41, 121, 244, 0.2);
+          }
+        }
+      }
+
+      a:nth-child(3) dl {
+        background: rgba(91, 190, 255, 0.1);
+
+        dt {
+          background: url('../../assets/homePage/s3.png') no-repeat center center;
+          background-size: 100% 100%;
+        }
+
+        dd {
+          b {
+            color: #5bbeff;
+            background: rgba(91, 190, 255, 0.2);
+          }
+        }
+      }
+
+      a:nth-child(4) dl {
+        background: rgba(251, 145, 81, 0.1);
+
+        dt {
+          background: url('../../assets/homePage/s4.png') no-repeat center center;
+          background-size: 100% 100%;
+        }
+
+        dd {
+          b {
+            color: #fb9151;
+            background: rgba(251, 145, 81, 0.2);
+          }
+        }
+      }
+    }
+
+    .enforceStatistic_plugType {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 60px;
+      background-size: 100% 100%;
+
+      > a div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30px;
+        margin: 0 30px;
+        padding: 0 20px;
+        color: #666666;
+        background: rgba(255, 255, 255, 0.4);
+        border: 1px solid #d0d9e4;
+        border-radius: 2px;
+      }
+
+      i {
+        width: 20px;
+        height: 20px;
+        margin-left: 8px;
+        background: url('../../assets/homePage/download.svg') no-repeat center center;
+        background-size: 100% 100%;
+      }
+
+      > a:hover {
+        div {
+          color: #3aa1ff;
+        }
+
+        i {
+          background: url('../../assets/homePage/downloadActive.svg') no-repeat center center;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1919px) {
+  .list_menu_wrapper {
+    .enforceStatistic {
+      .enforceStatistic_systemType {
+        padding: 3vh 0 0;
+
+        dl {
+          dd {
+            p {
+              width: 5vw;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+
+      .enforceStatistic_plugType {
+        height: 50px;
+      }
+    }
+  }
+}
